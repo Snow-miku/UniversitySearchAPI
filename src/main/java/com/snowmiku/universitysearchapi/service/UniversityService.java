@@ -1,6 +1,6 @@
 package com.snowmiku.universitysearchapi.service;
 
-import com.snowmiku.universitysearchapi.model.University;
+import com.snowmiku.universitysearchapi.pojo.University;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 

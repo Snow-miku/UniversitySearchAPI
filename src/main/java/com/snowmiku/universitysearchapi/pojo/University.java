@@ -1,4 +1,4 @@
-package com.snowmiku.universitysearchapi.model;
+package com.snowmiku.universitysearchapi.pojo;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
