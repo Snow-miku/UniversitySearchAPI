@@ -2,7 +2,7 @@ package com.snowmiku.universitysearchapi.pojo;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class University {
+public class UniversityDTO {
     private String name;
     private String country;
 
@@ -16,10 +16,10 @@ public class University {
     @JsonProperty("alpha_two_code")
     private String alphaTwoCode;
 
-    public University() {
+    public UniversityDTO() {
     }
 
-    public University(String name, String country, String stateProvince, String[] domains, String[] webPages, String alphaTwoCode) {
+    public UniversityDTO(String name, String country, String stateProvince, String[] domains, String[] webPages, String alphaTwoCode) {
         this.name = name;
         this.country = country;
         this.stateProvince = stateProvince;

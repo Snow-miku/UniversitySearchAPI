@@ -1,13 +1,15 @@
 package com.snowmiku.universitysearchapi.controller;
 
-import com.snowmiku.universitysearchapi.pojo.University;
+import com.snowmiku.universitysearchapi.pojo.UniversityDTO;
 import com.snowmiku.universitysearchapi.service.UniversityService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
-@RequestMapping
+@RequestMapping(value = "university")
 public class UniversitySearchController {
     private final UniversityService universityService;
 
@@ -16,15 +18,15 @@ public class UniversitySearchController {
         this.universityService = universityService;
     }
 
-    @GetMapping("/search")
-    public ResponseEntity<University[]> getUniversitiesByCountry(@RequestParam("country") String country) {
-        University[] universities = universityService.getUniversitiesByCountry(country);
+    @GetMapping(params = "countries")
+    public ResponseEntity<UniversityDTO[]> getUniversitiesByCountries(@RequestParam("countries") List<String> countries) {
+        UniversityDTO[] universities = universityService.getUniversitiesByCountries(countries);
         return ResponseEntity.ok(universities);
     }
 
-    @GetMapping("/search/all")
-    public ResponseEntity<University[]> getAllUniversities() {
-        University[] universities = universityService.getAllUniversities();
+    @GetMapping()
+    public ResponseEntity<UniversityDTO[]> getAllUniversities() {
+        UniversityDTO[] universities = universityService.getAllUniversities();
         return ResponseEntity.ok(universities);
     }
 }
